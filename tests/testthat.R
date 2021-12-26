@@ -1,4 +1,4 @@
 library(testthat)
-library(styler.putyourstyleguidehere)
+library(styler.nocomments)
 
-test_check("styler.putyourstyleguidehere")
+test_check("styler.nocomments")

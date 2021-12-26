@@ -1,8 +1,8 @@
 version <- unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 
-#' The putyourstyleguidehere style
+#' The nocomments style
 #'
-#' Style code according to the putyourstyleguidehere style guide. For more
+#' Style code according to the nocomments style guide. For more
 #' details and docs, see the [styler::tidyverse_style()].
 #' @inheritParams styler::tidyverse_style
 #' @family obtain transformers
@@ -11,12 +11,12 @@ version <- unlist(unname(read.dcf("DESCRIPTION")[, "Version"]))
 #' style_text("call( 1)", scope = "spaces")
 #' @importFrom purrr partial
 #' @export
-putyourstyleguidehere_style <- function(scope = "tokens",
-                                        strict = TRUE,
-                                        indent_by = 2,
-                                        start_comments_with_one_space = FALSE,
-                                        reindention = tidyverse_reindention(),
-                                        math_token_spacing = tidyverse_math_token_spacing()) {
+nocomments_style <- function(scope = "tokens",
+                             strict = TRUE,
+                             indent_by = 2,
+                             start_comments_with_one_space = FALSE,
+                             reindention = tidyverse_reindention(),
+                             math_token_spacing = tidyverse_math_token_spacing()) {
   args <- as.list(environment())
   scope <- styler:::scope_normalize(scope)
   indention_manipulators <- if ("indention" %in% scope) {
@@ -33,7 +33,7 @@ putyourstyleguidehere_style <- function(scope = "tokens",
   }
 
   token_manipulators <- if ("tokens" %in% scope) {
-    list(force_assignment_eq = force_assignment_eq)
+    list(drop_comments = drop_comments)
   }
 
 
@@ -48,7 +48,7 @@ putyourstyleguidehere_style <- function(scope = "tokens",
     # transformer options
     use_raw_indention = use_raw_indention,
     reindention = reindention,
-    style_guide_name = "styler.putyourstyleguidehere::putyourstyleguidehere_style@https://github.com/putyourGitHubUserNameHere/styler.putyourstyleguidehere/",
+    style_guide_name = "styler.nocomments::nocomments_style@https://github.com/lorenzwalthert/styler.nocomments/",
     style_guide_version = version,
     more_specs_style_guide = args
   )

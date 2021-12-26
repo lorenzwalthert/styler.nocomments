@@ -1,13 +1,12 @@
-Package: styler.putyourstyleguidehere
-Title: Third-party Style Guide For 'putyourstyleguidehere'
+Package: styler.nocomments
+Title: Third-party Style Guide For 'styler.nocomments'
 Version: 0.0.1
 Authors@R: 
-    person(given = "Hand",
-           family = "Muster",
+    person(given = "Lorenz",
+           family = "Walthert",
            role = c("aut", "cre"),
-           email = "hans@muster.de")
-Description: styles code according to the putyourstyleguidehere using
-    'styler'.
+           email = "lorenz.walthert@icloud.com")
+Description: Drop all comments using 'styler'.
 License: MIT + file LICENSE
 Imports: 
     magrittr,

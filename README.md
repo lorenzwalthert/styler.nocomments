@@ -1,53 +1,26 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# styler.putyourstyleguidehere
-
-This is a GitHub template to create and distribute a custom {styler}
-style guide. For more info, see the [{styler}
-documentation](https://styler.r-lib.org/dev/articles/distribute_custom_style_guides.html).
-You can use this template to create a GitHub repo by pressing the green
-button:
-
-<img src="https://raw.githubusercontent.com/lorenzwalthert/some_raw_data/master/styler.yours.png" width="500" />
-
-Here’s what you have to do once you created your repo from the template.
-
--   search for `putyourstyleguidehere_style` and replace it with the
-    name of your style guide.
-
--   Adapt the authors field in `DESCRIPTION`.
-
--   In `create_style_guide()`, ensure the `style_guide_name` matches the
-    expected format, e.g. styler has
-    `"styler::tidyverse_style@https://github.com/r-lib"`. See
-    `help(create_style_guide, package = "styler")` for details.
-
--   adapt the function `putyourstyleguidehere_style()` (the drop-in for
-    `styler::tidyverse_style`) such that it does what you want.
-    Currently, all the style guide is doing is to replace `<-` with `=`
-
--   add tests.
-
--   remove all of the above instructions.
+# styler.nocomments
 
 <!-- badges: start -->
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![R-CMD-check](https://github.com/putyourstyleguidehere/styler.putyourstyleguidehere/workflows/R-CMD-check/badge.svg)](https://github.com/putyourstyleguidehere/styler.putyourstyleguidehere/actions)
+[![R-CMD-check](https://github.com/nocomments/styler.nocomments/workflows/R-CMD-check/badge.svg)](https://github.com/nocomments/styler.nocomments/actions)
 <!-- badges: end -->
 
-The goal of {styler.putyourstyleguidehere} is… It is a third-party style
-guide for [{styler}](https://styler.r-lib.org).
+The goal of {styler.nocomments} is to remove all comments, nothing more
+and nothing less. It is a third-party style guide for
+[{styler}](https://styler.r-lib.org).
 
 ## Installation
 
-You can install the released version of {styler.putyourstyleguidehere}
-from [GitHub](https://github.com) with:
+You can install the released version of {styler.nocomments} from
+[GitHub](https://github.com) with:
 
 ``` r
-remotes::install_github("putyourstyleguidehere/styler.putyourstyleguidehere")
+remotes::install_github("nocomments/styler.nocomments")
 ```
 
 ## Example
@@ -55,12 +28,18 @@ remotes::install_github("putyourstyleguidehere/styler.putyourstyleguidehere")
 This is a basic example of how to style code with it.
 
 ``` r
-library(styler.putyourstyleguidehere)
+library(styler.nocomments)
 cache_deactivate()
+#> Deactivated cache.
 text <- "x <- 4
-y = 3
+y = 3 # comment
 a;
+
+# more comemnts
 "
 
 style_text(text)
+#> x <- 4
+#> y = 3
+#> a;
 ```

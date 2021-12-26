@@ -2,12 +2,12 @@
 % Please edit documentation in R/re-export.R
 \name{style_file}
 \alias{style_file}
-\title{Like \code{\link[styler:style_file]{styler::style_file()}}, but \code{style} defaulting to \code{putyourstyleguidehere_style}}
+\title{Like \code{\link[styler:style_file]{styler::style_file()}}, but \code{style} defaulting to \code{nocomments_style}}
 \usage{
 style_file(
   path,
   ...,
-  style = putyourstyleguidehere_style,
+  style = nocomments_style,
   transformers = style(...),
   include_roxygen_examples = TRUE,
   base_indention = 0,
